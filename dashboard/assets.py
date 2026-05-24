@@ -1,20 +1,15 @@
-# SAFE-ALERT-AI — Gestion des assets (images, logos)
-
-import base64
+"""
+assets.py — SAFE-ALERT-AI
+Définition des chemins et URLs pour les images et icônes.
+"""
 import os
 
+ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+ASSETS_DIR = os.path.join(ROOT_DIR, "assets")
 
-def get_image_base64(image_path: str) -> str:
-    """Encode une image en base64 pour l'affichage Streamlit."""
-    if os.path.exists(image_path):
-        with open(image_path, "rb") as f:
-            return base64.b64encode(f.read()).decode()
-    return ""
-
-
-def get_logo_html(logo_path: str, width: int = 80) -> str:
-    """Retourne le HTML pour afficher le logo."""
-    b64 = get_image_base64(logo_path)
-    if b64:
-        return f'<img src="data:image/jpeg;base64,{b64}" width="{width}"/>'
-    return "🛡️ SAFE-ALERT-AI"
+IMAGES = {
+    # On garde une image de fond premium, de type technologique/sécurité ou ciel dramatique
+    "bg_app": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop", 
+    "sidebar_top": "https://images.unsplash.com/photo-1584433144859-1fc3ab64a957?q=80&w=2000&auto=format&fit=crop", # Sécurité urbaine / lumières
+    "logo_fallback": "🛡️"
+}
