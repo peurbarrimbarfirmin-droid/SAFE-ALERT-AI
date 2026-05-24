@@ -1,13 +1,10 @@
+*.xlsx
+*.csv
 __pycache__/
 *.pyc
-.ipynb_checkpoints/
 .env
-venv/
+.ipynb_checkpoints/
 .DS_Store
-
-# models (optionnel si trop lourds)
-*.pkl
-
-# data sensibles
-data/raw/
-data/processed/
+node_modules/
+.cache_daily.sqlite
+*.parquet
