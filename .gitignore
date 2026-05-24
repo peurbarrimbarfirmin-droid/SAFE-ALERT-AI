@@ -1,8 +1,13 @@
-___pycache__/
+__pycache__/
 *.pyc
-*.pkl
+.ipynb_checkpoints/
 .env
 venv/
-.ipynb_checkpoints/
+.DS_Store
+
+# models (optionnel si trop lourds)
+*.pkl
+
+# data sensibles
 data/raw/
 data/processed/
